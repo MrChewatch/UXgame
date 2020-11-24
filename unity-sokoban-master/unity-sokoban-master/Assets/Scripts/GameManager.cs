@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class GameManager : MonoBehaviour
         winText = GameObject.Find("WinText").GetComponent<Text>();
 
         //DontDestroyOnLoad(this);
+        StartCoroutine(ExecuteAfterTime(1));
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
         boardScript = GetComponent<BoardManager>();
         goals = boardScript.SetupBoard(level);
     }

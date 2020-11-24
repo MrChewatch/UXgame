@@ -3,58 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Button_Control : MonoBehaviour
+public class Levels : MonoBehaviour
 {
-    public PlayerController Con;
 
-    void Start()
+    public void load1()
     {
-        Con =  GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        SceneManager.LoadScene(1);
     }
 
-    void Update()
+    public void load2()
     {
-        
+        SceneManager.LoadScene(2);
     }
-
-    public void w()
+    public void load3()
     {
-        Con.verticleInput = 1;
-        StartCoroutine(ExecuteAfterTime(0.1f,0,true));
+        SceneManager.LoadScene(3);
     }
-
-    public void A()
+    public void load4()
     {
-        Con.horizontalInput = -1;
-        StartCoroutine(ExecuteAfterTime(0.1f, 0, false));
+        SceneManager.LoadScene(4);
     }
-    public void S()
+    public void load5()
     {
-        Con.verticleInput = -1;
-        StartCoroutine(ExecuteAfterTime(0.1f, 0, true));
+        SceneManager.LoadScene(5);
     }
-    public void D()
+    public void load6()
     {
-        Con.horizontalInput = 1;
-        StartCoroutine(ExecuteAfterTime(0.1f, 0, false));
+        SceneManager.LoadScene(6);
     }
-
-    IEnumerator ExecuteAfterTime(float time,int input,bool vert)
+    public void load7()
     {
-        yield return new WaitForSeconds(time);
-
-        if (vert)
-        {
-            Con.verticleInput = input;
-        }
-        else
-        {
-            Con.horizontalInput = input;
-        }
+        SceneManager.LoadScene(7);
     }
-
-    public void regame()
+    public void load8()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(8);
+    }
+    public void load9()
+    {
+        SceneManager.LoadScene(9);
+    }
+    public void load10()
+    {
+        SceneManager.LoadScene(10);
     }
 }
